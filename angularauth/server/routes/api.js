@@ -67,7 +67,31 @@ router.get('/events', (req,res) => {
             "name": "Auto Expo",
             "description": "lorem ipsum",
             "date": "2012-04-23T18:25:43.123Z"
-        }
+        },
+        {
+            "_id": "3",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        },
+        {
+            "_id": "4",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        },
+        {
+            "_id": "5",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        },
+        {
+            "_id": "6",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        }        
     ]
     res.json(events)
 })
@@ -85,7 +109,31 @@ router.get('/special', (req,res) => {
             "name": "Auto Expo",
             "description": "lorem ipsum",
             "date": "2012-04-23T18:25:43.123Z"
-        }
+        },
+        {
+            "_id": "3",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        },
+        {
+            "_id": "4",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        },
+        {
+            "_id": "5",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        },
+        {
+            "_id": "6",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.123Z"
+        }        
     ]
     res.json(events)
 })
