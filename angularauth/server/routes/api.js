@@ -15,6 +15,21 @@ mongoose.connect(db, err=> {
     }
 })
 
+function verifyToken(req, res, next){
+    if (!req.headers.authorization) {   // no header
+        return res.status(401).send('Unauthorized request - no header')
+    } 
+    let token = req.headers.authorization.split(' ')[1]
+    if (token === 'null') {
+        return res.status(401).send('Unauthorized request - null Bearer token')
+    }
+    let payload = jwt.verify(token, 'my_encryption_password')
+    if (!payload) {
+        return res.status(401).send('Unauthorized request - token verification failed')
+    }
+    req.userId = payload.subject // this is mongo id of that documentwith user
+    next()
+}
 
 router.get('/', (req, res) => {
     res.send('From API route')
@@ -100,7 +115,7 @@ router.get('/events', (req,res) => {
     res.json(events)
 })
 
-router.get('/special', (req,res) => {
+router.get('/special', verifyToken, (req,res) => {
     let events = [
         {
             "_id": "1",
