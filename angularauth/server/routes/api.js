@@ -1,4 +1,5 @@
 const express = require('express')
+const jwt = require('jsonwebtoken')
 const router = express.Router()
 const User = require('../models/user')
 const mongoose = require('mongoose')
@@ -26,10 +27,10 @@ router.post('/register', (req, res) => {
     user.save((error, registeredUser) => {
         if (error) {
             console.log(error)
-        }
-
-        else {
-            res.status(200).send(registeredUser)
+        } else {
+            let payload = { subject: registeredUser._id }           // prepare payload
+            let token = jwt.sign(payload, 'my_encryption_password') // symetric encription
+            res.status(200).send({token})                           // respond with token 
         }
     }) 
 })
@@ -47,7 +48,10 @@ router.post('/login', (req, res) => {
                 if (user.password !== userData.password) {
                     res.status(401).send('Invalid Password')
                 } else {
-                    res.status(200).send(user)
+                    let payload = { subject: user._id }                       // user_id from DB
+                    let token = jwt.sign(payload, 'my_encryption_password')   // sign
+                    //res.status(200).send(user)
+                    res.status(200).send({token})                            // send to FE
                 }
             }
         }
