@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 app.use('/api', api)
 app.get('/', function(req, res){
-    res.send('Hello from Server')
+    res.send('Hello from NodeJS Server')
 })
 
 app.listen(PORT, function(){
