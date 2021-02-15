@@ -5,7 +5,7 @@ const User = require('../models/user')
 const mongoose = require('mongoose')
 const db = process.env.MONGO_URL || "mongodb://localhost:27017/eventsdb";
 //const db = "mongodb+srv://<user>:<password>@koby5icluster01-tlx1x.mongodb.net/admin?retryWrites=true&w=majority"
-console.log(db)
+//console.log(db)
 
 mongoose.connect(db, err=> {
     if (err) {
