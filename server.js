@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api', api)
 app.get('/hello', function(req, res){
-    res.send('Hello from NodeJS Server on Heroku')
+    res.send('Hello from NodeJS Server on Heroku with Angular')
 })
 
 app.listen(PORT, function(){
