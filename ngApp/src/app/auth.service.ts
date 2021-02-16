@@ -10,9 +10,7 @@ export class AuthService {
   baseUrl = environment.baseUrl;
  
   
-  private _eventsUrl = this.baseUrl + "/api/events";
-  private _specialEventsUrl = this.baseUrl  + "/api/special";  
-
+  
   private _registerUrl = this.baseUrl + "/api/register";
   private _loginUrl    = this.baseUrl + "/api/login";
 
