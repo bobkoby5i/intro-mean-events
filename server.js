@@ -9,9 +9,10 @@ const app = express()
 app.use(cors())
 
 app.use(bodyParser.json())
+app.use(express.static(__dirname + '/public'));
 
 app.use('/api', api)
-app.get('/', function(req, res){
+app.get('/hello', function(req, res){
     res.send('Hello from NodeJS Server on Heroku')
 })
 
