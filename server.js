@@ -9,7 +9,7 @@ const app = express()
 app.use(cors())
 
 app.use(bodyParser.json())
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/ngApp/dist/ng-app'));
 
 app.use('/api', api)
 app.get('/hello', function(req, res){
